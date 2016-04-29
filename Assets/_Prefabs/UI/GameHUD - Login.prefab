@@ -4165,10 +4165,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   loginUsernameField: {fileID: 11419666}
   loginPasswordField: {fileID: 11422150}
+  registerUsernameField: {fileID: 0}
+  registerPasswordField: {fileID: 0}
+  registerEmailField: {fileID: 0}
   authenticationText: {fileID: 11467738}
   authenticationButton: {fileID: 11428754}
   cursorImage: {fileID: 2800000, guid: b798913b0cf5b57498b3f23baac931f4, type: 3}
   mainMenu: {fileID: 22332806}
+  registerFlag: {fileID: 0}
 --- !u!114 &11419136
 MonoBehaviour:
   m_ObjectHideFlags: 1
