@@ -1,0 +1,864 @@
+fileFormatVersion: 2
+guid: b06a3bc128ba15c47a163d19015dfe9a
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Orc
+    100002: //RootNode
+    100004: Orc_club
+    100006: Orc_helmet
+    100008: Orc_shield
+    100010: Orccloth1
+    100012: Orccloth2
+    100014: OrcHead
+    100016: OrcLCalf
+    100018: OrcLCollarbone
+    100020: OrcLDigit11
+    100022: OrcLDigit11 1
+    100024: OrcLDigit21
+    100026: OrcLDigit22
+    100028: OrcLFoot
+    100030: OrcLForearm
+    100032: OrcLPalm
+    100034: OrcLThigh
+    100036: OrcLUpperarm
+    100038: OrcMouth
+    100040: OrcNeck
+    100042: OrcPelvis
+    100044: OrcRCalf
+    100046: OrcRCollarbone
+    100048: OrcRDigit11
+    100050: OrcRDigit11 1
+    100052: OrcRDigit21
+    100054: OrcRDigit22
+    100056: OrcRFoot
+    100058: OrcRForearm
+    100060: OrcRibcage
+    100062: OrcRPalm
+    100064: OrcRThigh
+    100066: OrcRUpperarm
+    100068: OrcSpine1
+    100070: OrcSpine2
+    100072: OrcSpine3
+    400000: Orc
+    400002: //RootNode
+    400004: Orc_club
+    400006: Orc_helmet
+    400008: Orc_shield
+    400010: Orccloth1
+    400012: Orccloth2
+    400014: OrcHead
+    400016: OrcLCalf
+    400018: OrcLCollarbone
+    400020: OrcLDigit11
+    400022: OrcLDigit11 1
+    400024: OrcLDigit21
+    400026: OrcLDigit22
+    400028: OrcLFoot
+    400030: OrcLForearm
+    400032: OrcLPalm
+    400034: OrcLThigh
+    400036: OrcLUpperarm
+    400038: OrcMouth
+    400040: OrcNeck
+    400042: OrcPelvis
+    400044: OrcRCalf
+    400046: OrcRCollarbone
+    400048: OrcRDigit11
+    400050: OrcRDigit11 1
+    400052: OrcRDigit21
+    400054: OrcRDigit22
+    400056: OrcRFoot
+    400058: OrcRForearm
+    400060: OrcRibcage
+    400062: OrcRPalm
+    400064: OrcRThigh
+    400066: OrcRUpperarm
+    400068: OrcSpine1
+    400070: OrcSpine2
+    400072: OrcSpine3
+    2300000: Orc_club
+    2300002: Orc_helmet
+    2300004: Orc_shield
+    3300000: Orc_club
+    3300002: Orc_helmet
+    3300004: Orc_shield
+    4300000: Orc_shield
+    4300002: Orc_club
+    4300004: Orc_helmet
+    4300006: Orc
+    7400000: idle
+    7400002: idle_break
+    7400004: hit
+    7400006: attack1
+    7400008: attack2
+    7400010: die
+    7400012: jump
+    7400014: walk
+    7400016: block
+    7400018: death
+    7400020: walk
+    7400022: run
+    9500000: //RootNode
+    11100000: //RootNode
+    13700000: Orc
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleRotations: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: '
+
+      Imported file ''orc'' conversion failed: Transform ''ElfPelvis'' for human bone
+      ''Hips'' not found
+
+
+'
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 3
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: idle
+      takeName: Take 001
+      firstFrame: 0
+      lastFrame: 80
+      wrapMode: 2
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: idle_break
+      takeName: Take 001
+      firstFrame: 80
+      lastFrame: 150
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: hit
+      takeName: Take 001
+      firstFrame: 150
+      lastFrame: 170
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: attack1
+      takeName: Take 001
+      firstFrame: 170
+      lastFrame: 200
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: attack2
+      takeName: Take 001
+      firstFrame: 200
+      lastFrame: 235
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: block
+      takeName: Take 001
+      firstFrame: 235
+      lastFrame: 255
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: jump
+      takeName: Take 001
+      firstFrame: 400
+      lastFrame: 445
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: death
+      takeName: Take 001
+      firstFrame: 290
+      lastFrame: 350
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: walk
+      takeName: Take 001
+      firstFrame: 460
+      lastFrame: 495
+      wrapMode: 2
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: run
+      takeName: Take 001
+      firstFrame: 500
+      lastFrame: 530
+      wrapMode: 2
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 0.01
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human:
+    - boneName: OrcPelvis
+      humanName: Hips
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: OrcLThigh
+      humanName: LeftUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: OrcRThigh
+      humanName: RightUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: OrcLCalf
+      humanName: LeftLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: OrcRCalf
+      humanName: RightLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: OrcLFoot
+      humanName: LeftFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: OrcRFoot
+      humanName: RightFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: OrcSpine1
+      humanName: Spine
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: OrcSpine2
+      humanName: Chest
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: OrcNeck
+      humanName: Neck
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: OrcHead
+      humanName: Head
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: OrcLCollarbone
+      humanName: LeftShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: OrcRCollarbone
+      humanName: RightShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: OrcLUpperarm
+      humanName: LeftUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: OrcRUpperarm
+      humanName: RightUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: OrcLForearm
+      humanName: LeftLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: OrcRForearm
+      humanName: RightLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: OrcLPalm
+      humanName: LeftHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: OrcRPalm
+      humanName: RightHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: OrcLDigit11
+      humanName: LeftToes
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: OrcRDigit11
+      humanName: RightToes
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: OrcMouth
+      humanName: Jaw
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: OrcLDigit11 1
+      humanName: Left Index Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: OrcLDigit21
+      humanName: Left Middle Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: OrcLDigit22
+      humanName: Left Middle Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: OrcRDigit11 1
+      humanName: Right Index Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: OrcRDigit21
+      humanName: Right Middle Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: OrcRDigit22
+      humanName: Right Middle Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    skeleton:
+    - name: orc(Clone)
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Orc
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: OrcPelvis
+      position: {x: -0.000000011175871, y: 0.63063025, z: 0.037942644}
+      rotation: {x: 0.49912703, y: -0.5008716, z: -0.4991269, w: 0.5008715}
+      scale: {x: 1.0000002, y: 0.9999994, z: 1.0000006}
+      transformModified: 1
+    - name: Orccloth1
+      position: {x: 0.00055538176, y: 0.15918483, z: -0.00000003412366}
+      rotation: {x: 0.000000039360426, y: -0.00000004108082, z: 0.9978502, w: -0.0655364}
+      scale: {x: 0.9999999, y: 1.0000006, z: 0.99999946}
+      transformModified: 1
+    - name: Orccloth2
+      position: {x: -0.22793467, y: 0, z: 0.0000000021606683}
+      rotation: {x: 0.000000008949171, y: -0.0000000015565321, z: -0.085486226, w: 0.9963394}
+      scale: {x: 1.0000001, y: 0.9999999, z: 0.99999994}
+      transformModified: 1
+    - name: OrcLThigh
+      position: {x: -0.010401153, y: 0.028359588, z: 0.11650852}
+      rotation: {x: -0.10675721, y: 0.99107546, z: -0.015590087, w: 0.078290075}
+      scale: {x: 0.9999999, y: 1.0000005, z: 0.9999993}
+      transformModified: 1
+    - name: OrcLCalf
+      position: {x: -0.29991695, y: 0.000000114440915, z: 0.0000001335144}
+      rotation: {x: -0.0016215292, y: 0.07228591, z: 0.28228608, w: 0.9566016}
+      scale: {x: 1.0000002, y: 1.0000005, z: 1.0000006}
+      transformModified: 1
+    - name: OrcLFoot
+      position: {x: -0.2742135, y: 0.000000009536743, z: 0}
+      rotation: {x: -0.0795767, y: -0.035340115, z: -0.6950501, w: 0.71366936}
+      scale: {x: 1, y: 1.0000001, z: 0.9999999}
+      transformModified: 1
+    - name: OrcLDigit11
+      position: {x: -0.20586944, y: 0.000000019073486, z: -0.000000009536743}
+      rotation: {x: -0.0074929446, y: 0.0011078342, z: -0.18861946, w: 0.9820211}
+      scale: {x: 1.0000001, y: 0.9999999, z: 1.0000001}
+      transformModified: 1
+    - name: OrcSpine1
+      position: {x: -0.027610473, y: -0.0021124934, z: -0.0000000043213366}
+      rotation: {x: 0.0000004768371, y: 0.000000059604638, z: 0.14520098, w: -0.9894022}
+      scale: {x: 1, y: 0.9999998, z: 1}
+      transformModified: 1
+    - name: OrcSpine2
+      position: {x: -0.22570194, y: 0, z: 0.0000000011920929}
+      rotation: {x: -0.0000003874302, y: -0.000000029802322, z: -0.16840902, w: -0.9857173}
+      scale: {x: 0.9999996, y: 1.0000007, z: 0.99999905}
+      transformModified: 1
+    - name: OrcSpine3
+      position: {x: -0.19226798, y: 0, z: -5.9604643e-10}
+      rotation: {x: 0.0064175995, y: -0.002630535, z: -0.01612477, w: 0.999846}
+      scale: {x: 0.9999995, y: 0.99999994, z: 0.99999917}
+      transformModified: 1
+    - name: OrcRibcage
+      position: {x: -0.20661613, y: 0, z: -7.45058e-10}
+      rotation: {x: 0.0064819455, y: -0.002467692, z: 0.009117603, w: -0.99993443}
+      scale: {x: 0.9999997, y: 0.9999995, z: 1.0000002}
+      transformModified: 1
+    - name: OrcNeck
+      position: {x: 0.0010609436, y: 0.013585071, z: -0.00000000834465}
+      rotation: {x: -0.000000089406946, y: 0.000000089406946, z: 0.24275735, w: -0.9700871}
+      scale: {x: 0.9999999, y: 1.0000002, z: 1.0000006}
+      transformModified: 1
+    - name: OrcHead
+      position: {x: -0.1589927, y: 0, z: 0}
+      rotation: {x: 0.000000059604645, y: -0.000000029802322, z: -0.32579142, w: -0.94544166}
+      scale: {x: 1.0000004, y: 1.000001, z: 1.0000005}
+      transformModified: 1
+    - name: Orc_helmet
+      position: {x: 1.3974448, y: -0.068487905, z: 0.00000014781952}
+      rotation: {x: 0.70710707, y: 0.00000014123539, z: -0.7071065, w: 0.00000014123549}
+      scale: {x: 1, y: 1, z: 1.0000004}
+      transformModified: 1
+    - name: OrcMouth
+      position: {x: 0.049306028, y: 0.06035451, z: 0.0031958597}
+      rotation: {x: 0.000000052154054, y: 0.000000029802315, z: 0.8128528, w: -0.5824692}
+      scale: {x: 0.99999994, y: 1.0000002, z: 1.0000001}
+      transformModified: 1
+    - name: OrcLCollarbone
+      position: {x: 0.00014663696, y: 0.052127514, z: 0.076203085}
+      rotation: {x: -0.04952645, y: -0.73020774, z: -0.16424482, w: -0.6613376}
+      scale: {x: 1.0000005, y: 1.0000002, z: 1.000001}
+      transformModified: 1
+    - name: OrcLUpperarm
+      position: {x: -0.17608331, y: -0.000000009536743, z: 0}
+      rotation: {x: 0.21931954, y: -0.044797923, z: -0.14626357, w: 0.96358657}
+      scale: {x: 1.0000005, y: 1.0000001, z: 1.0000005}
+      transformModified: 1
+    - name: OrcLForearm
+      position: {x: -0.31972983, y: 0.000000019073486, z: 0}
+      rotation: {x: -0.085130356, y: -0.02821775, z: -0.026199993, w: 0.99562556}
+      scale: {x: 1, y: 1, z: 0.9999998}
+      transformModified: 1
+    - name: OrcLPalm
+      position: {x: -0.3115029, y: 0, z: 0}
+      rotation: {x: -0.6879699, y: 0.062482428, z: -0.037136737, w: 0.72209024}
+      scale: {x: 0.99999994, y: 1.0000001, z: 0.99999976}
+      transformModified: 1
+    - name: Orc_shield
+      position: {x: -0.17956695, y: -0.99313855, z: -0.027364273}
+      rotation: {x: -0.5690843, y: 0.15153067, z: -0.42563996, w: 0.6870315}
+      scale: {x: 1.0000004, y: 1.0000004, z: 1}
+      transformModified: 1
+    - name: OrcLDigit11 1
+      position: {x: -0.046460934, y: -0.012191772, z: 0.06376053}
+      rotation: {x: 0.37970433, y: 0.38949957, z: -0.040469445, w: 0.83813906}
+      scale: {x: 1.0000005, y: 0.9999999, z: 1.0000001}
+      transformModified: 1
+    - name: OrcLDigit21
+      position: {x: -0.15332891, y: -0.017267456, z: -0.0013152313}
+      rotation: {x: -0.071487814, y: 0.017883165, z: 0.12933066, w: 0.98885965}
+      scale: {x: 0.9999998, y: 1.0000001, z: 0.9999995}
+      transformModified: 1
+    - name: OrcLDigit22
+      position: {x: -0.054371722, y: -0.000000076293944, z: -0.000000038146972}
+      rotation: {x: -0.0020933738, y: -0.012333447, z: 0.07798373, w: 0.9968761}
+      scale: {x: 1, y: 1.0000001, z: 1.0000002}
+      transformModified: 1
+    - name: OrcRCollarbone
+      position: {x: 0.00014648437, y: 0.052127533, z: -0.07620309}
+      rotation: {x: -0.04952646, y: -0.7302079, z: 0.16424464, w: 0.66133755}
+      scale: {x: 1.0000007, y: 1.0000007, z: 1.000001}
+      transformModified: 1
+    - name: OrcRUpperarm
+      position: {x: -0.1760833, y: -0.000000009536743, z: 0}
+      rotation: {x: -0.2193196, y: 0.04479822, z: -0.14626369, w: 0.96358657}
+      scale: {x: 0.9999996, y: 0.9999996, z: 0.9999999}
+      transformModified: 1
+    - name: OrcRForearm
+      position: {x: -0.31972983, y: 0, z: 0}
+      rotation: {x: 0.08513039, y: 0.028217727, z: -0.026199851, w: 0.99562556}
+      scale: {x: 1.000001, y: 1.0000002, z: 1.0000001}
+      transformModified: 1
+    - name: OrcRPalm
+      position: {x: -0.3115029, y: -0.000000009536743, z: 0}
+      rotation: {x: 0.6879697, y: -0.062482998, z: -0.03713624, w: 0.72209036}
+      scale: {x: 0.9999999, y: 0.9999998, z: 1}
+      transformModified: 1
+    - name: Orc_club
+      position: {x: -0.17732242, y: -0.06973328, z: -0.23921075}
+      rotation: {x: 0.39922783, y: 0.69457793, z: 0.57200664, w: 0.17603125}
+      scale: {x: 0.9999999, y: 1.0000001, z: 0.9999999}
+      transformModified: 1
+    - name: OrcRDigit21
+      position: {x: -0.15332882, y: -0.01726738, z: 0.0013152885}
+      rotation: {x: 0.07148806, y: -0.01788233, z: 0.1293329, w: 0.9888593}
+      scale: {x: 0.99999976, y: 1, z: 1}
+      transformModified: 1
+    - name: OrcRDigit22
+      position: {x: -0.05437172, y: -0.000000038146972, z: 0}
+      rotation: {x: 0.0020933743, y: 0.012333599, z: 0.07798363, w: 0.9968762}
+      scale: {x: 0.9999999, y: 1.0000001, z: 0.99999964}
+      transformModified: 1
+    - name: OrcRDigit11 1
+      position: {x: -0.046460915, y: -0.01219162, z: -0.06376055}
+      rotation: {x: -0.37970403, y: -0.3894996, z: -0.040469255, w: 0.8381391}
+      scale: {x: 0.9999999, y: 1, z: 1.0000002}
+      transformModified: 1
+    - name: OrcRThigh
+      position: {x: -0.010401115, y: 0.028359579, z: -0.11650856}
+      rotation: {x: -0.10675732, y: 0.99107546, z: 0.015589983, w: -0.07829008}
+      scale: {x: 0.99999994, y: 1.0000004, z: 0.99999964}
+      transformModified: 1
+    - name: OrcRCalf
+      position: {x: -0.2999168, y: 0.000000057220458, z: -0.000000038146972}
+      rotation: {x: 0.0014976859, y: -0.072335765, z: 0.2822722, w: 0.9566022}
+      scale: {x: 1.0000001, y: 0.9999998, z: 0.9999998}
+      transformModified: 1
+    - name: OrcRFoot
+      position: {x: -0.2742135, y: 0.0000000047683715, z: 0}
+      rotation: {x: 0.079663076, y: 0.035442255, z: -0.6950432, w: 0.7136614}
+      scale: {x: 1.0000002, y: 0.99999976, z: 1.0000004}
+      transformModified: 1
+    - name: OrcRDigit11
+      position: {x: -0.20586944, y: 0, z: -0.000000019073486}
+      rotation: {x: 0.007492884, y: -0.0011078507, z: -0.1886194, w: 0.9820211}
+      scale: {x: 1.0000001, y: 0.99999976, z: 0.99999976}
+      transformModified: 1
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {fileID: 9000000, guid: b373d1e477bcb7e449e6c29c6251ce95,
+    type: 3}
+  animationType: 3
+  humanoidOversampling: 1
+  additionalBone: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

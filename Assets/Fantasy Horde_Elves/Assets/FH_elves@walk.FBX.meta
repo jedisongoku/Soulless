@@ -1,0 +1,222 @@
+fileFormatVersion: 2
+guid: 721d21576a442904ab58efb0136f90c5
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: bone_elf arch_botton00
+    100002: bone_elf arch_botton01
+    100004: bone_elf arch_main
+    100006: bone_elf arch_top00
+    100008: bone_elf arch_top01
+    100010: ctrl_goblin arch_arrow
+    100012: ctrl_goblin arch_main
+    100014: Elf_weaponL
+    100016: Elf_weaponR
+    100018: Elfcloth_back
+    100020: Elfcloth_front
+    100022: Elfhair1
+    100024: Elfhair2
+    100026: Elfhair3
+    100028: ElfHead
+    100030: ElfLCalf
+    100032: ElfLCollarbone
+    100034: ElfLDigit11
+    100036: ElfLDigit11 1
+    100038: ElfLDigit12
+    100040: ElfLDigit13
+    100042: ElfLDigit21
+    100044: ElfLDigit22
+    100046: ElfLDigit23
+    100048: ElfLDigit31
+    100050: ElfLDigit32
+    100052: ElfLDigit33
+    100054: ElfLFoot
+    100056: ElfLForearm
+    100058: ElfLPalm
+    100060: ElfLThigh
+    100062: ElfLUpperarm
+    100064: Elfmouth
+    100066: ElfNeck
+    100068: ElfPelvis
+    100070: ElfRCalf
+    100072: ElfRCollarbone
+    100074: ElfRDigit11
+    100076: ElfRDigit11 1
+    100078: ElfRDigit12
+    100080: ElfRDigit13
+    100082: ElfRDigit21
+    100084: ElfRDigit22
+    100086: ElfRDigit23
+    100088: ElfRDigit31
+    100090: ElfRDigit32
+    100092: ElfRDigit33
+    100094: ElfRFoot
+    100096: ElfRForearm
+    100098: ElfRibcage
+    100100: ElfRPalm
+    100102: ElfRThigh
+    100104: ElfRUpperarm
+    100106: //RootNode
+    100108: ElfSpine1
+    100110: ElfSpine2
+    100112: ElfSpine3
+    100114: elf_male_01
+    100116: elf_male_03
+    400000: bone_elf arch_botton00
+    400002: bone_elf arch_botton01
+    400004: bone_elf arch_main
+    400006: bone_elf arch_top00
+    400008: bone_elf arch_top01
+    400010: ctrl_goblin arch_arrow
+    400012: ctrl_goblin arch_main
+    400014: Elf_weaponL
+    400016: Elf_weaponR
+    400018: Elfcloth_back
+    400020: Elfcloth_front
+    400022: Elfhair1
+    400024: Elfhair2
+    400026: Elfhair3
+    400028: ElfHead
+    400030: ElfLCalf
+    400032: ElfLCollarbone
+    400034: ElfLDigit11
+    400036: ElfLDigit11 1
+    400038: ElfLDigit12
+    400040: ElfLDigit13
+    400042: ElfLDigit21
+    400044: ElfLDigit22
+    400046: ElfLDigit23
+    400048: ElfLDigit31
+    400050: ElfLDigit32
+    400052: ElfLDigit33
+    400054: ElfLFoot
+    400056: ElfLForearm
+    400058: ElfLPalm
+    400060: ElfLThigh
+    400062: ElfLUpperarm
+    400064: Elfmouth
+    400066: ElfNeck
+    400068: ElfPelvis
+    400070: ElfRCalf
+    400072: ElfRCollarbone
+    400074: ElfRDigit11
+    400076: ElfRDigit11 1
+    400078: ElfRDigit12
+    400080: ElfRDigit13
+    400082: ElfRDigit21
+    400084: ElfRDigit22
+    400086: ElfRDigit23
+    400088: ElfRDigit31
+    400090: ElfRDigit32
+    400092: ElfRDigit33
+    400094: ElfRFoot
+    400096: ElfRForearm
+    400098: ElfRibcage
+    400100: ElfRPalm
+    400102: ElfRThigh
+    400104: ElfRUpperarm
+    400106: //RootNode
+    400108: ElfSpine1
+    400110: ElfSpine2
+    400112: ElfSpine3
+    400114: elf_male_01
+    400116: elf_male_03
+    4300000: elf_male_01
+    4300002: elf_male_03
+    7400000: walk
+    9500000: //RootNode
+    11100000: //RootNode
+    13700000: elf_male_01
+    13700002: elf_male_03
+  materials:
+    importMaterials: 0
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleRotations: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: walk
+      takeName: Take 001
+      firstFrame: 0
+      lastFrame: 35
+      wrapMode: 2
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 0.01
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 1
+  humanoidOversampling: 1
+  additionalBone: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
