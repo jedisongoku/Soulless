@@ -197,7 +197,14 @@ public class NPC : MonoBehaviour {
 
     void OnMouseOver()
     {
-        GetComponentInChildren<SkinnedMeshRenderer>().material.shader = outlineShader;
+        if (finishingQuest == false && startingQuests.Count != 0)
+        {
+            /////SWITCH TO QUEST GIVING SHADER
+        }
+        else
+        {
+            GetComponentInChildren<SkinnedMeshRenderer>().material.shader = outlineShader;
+        }
     }
 
     void OnMouseExit()
