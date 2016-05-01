@@ -126,16 +126,6 @@ public class PlayFabApiCalls : MonoBehaviour
 
                 }
             }
-            /*else
-            {
-                foreach (var character in result.Characters)
-                {
-                    if(character.CharacterName == PlayFabDataStore.friendUsername)
-                    {
-                        PlayFabDataStore.friendCharacterId = character.CharacterId;
-                    }
-                }
-            }*/
             
         }, (error) =>
         {
@@ -505,8 +495,7 @@ public class PlayFabApiCalls : MonoBehaviour
             {
                 PlayFabDataStore.friendsList.Add(friend.Username, friend.FriendPlayFabId);
             }
-            FriendsList.friendsList.LoadFriendsList();
-           
+
         },
         (error) =>
         {
