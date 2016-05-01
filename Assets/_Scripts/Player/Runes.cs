@@ -393,6 +393,56 @@ public class Runes : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Throw your weapon at an enemy dealing 275% weapon damage.
+    /// </summary>
+    public void Rune_WeaponThrow()
+    {
+        runeId = "Rune_WeaponThrow";
+        mainEnemy = targetEnemy;
+
+        if (targetEnemy != null)
+        {
+            stopDistanceForAttack = PlayFabDataStore.catalogRunes[runeId].attackRange;
+            if (Vector3.Distance(transform.position, targetEnemy.transform.position) <= stopDistanceForAttack)
+            {
+                if (attackTimerSkillSlot5 >= PlayFabDataStore.catalogRunes[runeId].cooldown)
+                {
+                    photonView.RPC("SendTrigger", PhotonTargets.AllViaServer, photonView.viewID, "ATTACK 1");
+
+
+                    photonView.RPC("InstantiateParticleEffects", PhotonTargets.All, photonView.viewID, "WeaponThrow", spellStartLocation.position, Quaternion.identity, targetEnemy.GetComponent<PhotonView>().viewID, false);
+
+                    if (GetPlayerResource() + PlayFabDataStore.catalogRunes[runeId].resourceGeneration <= PlayFabDataStore.playerMaxResource)
+                    {
+                        SetPlayerResource(PlayFabDataStore.catalogRunes[runeId].resourceGeneration);
+                    }
+                    else
+                    {
+                        PlayFabDataStore.playerCurrentResource = 100;
+                    }
+                    transform.LookAt(targetEnemy.transform.position);
+                    tempAttackDamage = PlayFabDataStore.playerSpellDamage;
+                    tempCriticalChance = PlayFabDataStore.playerCriticalChance;
+                    tempResourceGeneration = PlayFabDataStore.catalogRunes[runeId].resourceGeneration;
+                    tempDamageType = PlayFabDataStore.catalogRunes[runeId].damageType;
+
+                    foreach (var modifier in PlayFabDataStore.playerActiveModifierRunes)
+                    {
+                        if (modifier.Value == 5)
+                        {
+                            var loadingMethod = GetType().GetMethod(modifier.Key);
+                            var arguments = new object[] { targetEnemy };
+                            loadingMethod.Invoke(this, arguments);
+                        }
+                    }
+                    ApplyDamage(targetEnemy);
+                    mainEnemy = null;
+                    attackTimerSkillSlot5 = 0f;
+                }
+            }
+        }
+    }
 
     /// <summary>
     /// Smash enemies in front of you for 535% physical damage. Riposte has a 1% increased Critical Hit Chance for every 5 Resource that you have.

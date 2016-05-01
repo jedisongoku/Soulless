@@ -30,4 +30,15 @@ public class ParticleFollowTarget : MonoBehaviour {
     {
         return target;
     }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if(other.GetComponent<Health>() != null)
+        {
+            if(other.GetComponent<Health>().IsDead())
+            {
+                Destroy(gameObject);
+            }
+        }
+    }
 }

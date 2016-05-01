@@ -82,6 +82,8 @@ public class DropItem : MonoBehaviour
         if(itemClass == "Item")
         {
             source.GetComponent<TextMesh>().color = new Color(255, 0, 255);
+            source.GetComponentInChildren<SkinnedMeshRenderer>().sharedMesh = itemMesh;
+            source.GetComponentInChildren<SkinnedMeshRenderer>().material = itemMaterial;
         }
         else
         if (itemClass == "Skill")

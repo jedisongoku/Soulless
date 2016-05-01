@@ -240,7 +240,7 @@ MonoBehaviour:
   DestoyOnHit: 1
   FixRotation: 0
   LifeTimeAfterHit: 0
-  LifeTime: 3
+  LifeTime: 1.5
 --- !u!114 &11499646
 MonoBehaviour:
   m_ObjectHideFlags: 1

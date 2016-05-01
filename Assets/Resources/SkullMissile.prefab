@@ -273,7 +273,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aea3c196ff927664fac017e6ff812a54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LifeTime: 3
+  LifeTime: 1.5
   SpawnAfterDead: {fileID: 0}
 --- !u!114 &11497328
 MonoBehaviour:

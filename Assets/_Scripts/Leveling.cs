@@ -105,6 +105,7 @@ public class Leveling : MonoBehaviour
             PlayFabDataStore.playerLevel++;
             PlayFabDataStore.maxExperienceToLevel = levelMaxExperienceList[PlayFabDataStore.playerLevel - 1];
             HUD_Manager.hudManager.playerLevelText.text = PlayFabDataStore.playerLevel.ToString();
+            
             //Debug.Log("After" + PlayFabDataStore.playerLevel);
         }
         
