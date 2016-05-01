@@ -91,8 +91,11 @@ public class NPC : MonoBehaviour {
                 {
                     if (!PlayFabDataStore.playerCompletedQuests.Contains(quest) && !PlayFabDataStore.playerQuestLog.Contains(quest))
                     {
-                        GetComponentInChildren<SkinnedMeshRenderer>().material.shader = outlineShader;
-                        GetComponentInChildren<SkinnedMeshRenderer>().material.SetColor("_OutlineColor", questOutlineColor);
+                        if (GetComponentInChildren<SkinnedMeshRenderer>() != null)
+                        {
+                            GetComponentInChildren<SkinnedMeshRenderer>().material.shader = outlineShader;
+                            GetComponentInChildren<SkinnedMeshRenderer>().material.SetColor("_OutlineColor", questOutlineColor);
+                        }
                         startingQuest = true;
                         break;
                     }
@@ -113,9 +116,12 @@ public class NPC : MonoBehaviour {
         playerPosition.y = 0;
         Quaternion targetRotation = Quaternion.LookRotation(playerPosition-position);
         transform.rotation = targetRotation;
-       
+
         //activate dialogue box
-        dialogueManager.StartDialogue(npcName,dialogue, transform.position, portraitImage);
+        if (dialogue != null)
+        {
+            dialogueManager.StartDialogue(npcName, dialogue, transform.position, portraitImage);
+        }
         /*
         dialogueCamera.transform.position = transform.position+faceLocation;
         dialogueCamera.transform.rotation = transform.rotation;
