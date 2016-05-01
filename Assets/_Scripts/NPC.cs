@@ -72,8 +72,11 @@ public class NPC : MonoBehaviour {
                 {
                     if (endingQuests.Contains(quest))
                     {
-                        GetComponentInChildren<SkinnedMeshRenderer>().material.shader = outlineShader;
-                        GetComponentInChildren<SkinnedMeshRenderer>().material.SetColor("_OutlineColor", questOutlineColor);
+                        if (GetComponentInChildren<SkinnedMeshRenderer>() != null)
+                        {
+                            GetComponentInChildren<SkinnedMeshRenderer>().material.shader = outlineShader;
+                            GetComponentInChildren<SkinnedMeshRenderer>().material.SetColor("_OutlineColor", questOutlineColor);
+                        }
                         endQuestId = endingQuests.IndexOf(quest);
                         finishingQuest = true;
                         Debug.Log(finishingQuest);
@@ -228,20 +231,28 @@ public class NPC : MonoBehaviour {
 
     void OnMouseOver()
     {
-        GetComponentInChildren<SkinnedMeshRenderer>().material.shader = outlineShader;
-        GetComponentInChildren<SkinnedMeshRenderer>().material.SetColor("_OutlineColor", mouseOverOutlineColor);
+
+        if (GetComponentInChildren<SkinnedMeshRenderer>() != null)
+        {
+            GetComponentInChildren<SkinnedMeshRenderer>().material.shader = outlineShader;
+            GetComponentInChildren<SkinnedMeshRenderer>().material.SetColor("_OutlineColor", mouseOverOutlineColor);
+        }
     }
 
     void OnMouseExit()
     {
-        if(finishingQuest || startingQuest)
+        if (GetComponentInChildren<SkinnedMeshRenderer>() != null)
         {
-            GetComponentInChildren<SkinnedMeshRenderer>().material.shader = outlineShader;
-            GetComponentInChildren<SkinnedMeshRenderer>().material.SetColor("_OutlineColor", questOutlineColor);
-        }
-        else
-        {
-            GetComponentInChildren<SkinnedMeshRenderer>().material.shader = defaultShader;
+            if (finishingQuest || startingQuest)
+            {
+
+                GetComponentInChildren<SkinnedMeshRenderer>().material.shader = outlineShader;
+                GetComponentInChildren<SkinnedMeshRenderer>().material.SetColor("_OutlineColor", questOutlineColor);
+            }
+            else
+            {
+                GetComponentInChildren<SkinnedMeshRenderer>().material.shader = defaultShader;
+            }
         }
         
     }
