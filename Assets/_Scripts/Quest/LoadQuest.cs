@@ -3,7 +3,10 @@ using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
 
-public class LoadQuest : MonoBehaviour {
+public class LoadQuest : MonoBehaviour
+{
+    public delegate void QuestNPC();
+    public static event QuestNPC OnAccept;
 
     public string questId;
     public Text title;
@@ -88,6 +91,7 @@ public class LoadQuest : MonoBehaviour {
         QuestTracker.questTracker.LoadTrackerQuests();
         gameObject.SetActive(false);
         GetComponent<RaycastUI>().OnMouseExit();
+        OnAccept();
 
     }
 
@@ -123,8 +127,16 @@ public class LoadQuest : MonoBehaviour {
             QuestTracker.questTracker.LoadTrackerQuests();
             GetComponent<RaycastUI>().OnMouseExit();
         }
+        OnAccept();
         
         
+    }
+
+    public void DeclineQuest()
+    {
+        GetComponent<RaycastUI>().OnMouseExit();
+        gameObject.SetActive(false);
+        OnAccept = null;
     }
 
 }

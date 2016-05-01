@@ -36,12 +36,12 @@ Material:
         second: 0.078125
       data:
         first:
-          name: _DetailTex
-        second: 1
-      data:
-        first:
           name: _TintColor
         second: 0
+      data:
+        first:
+          name: _DetailTex
+        second: 1
       data:
         first:
           name: _VertexColor
