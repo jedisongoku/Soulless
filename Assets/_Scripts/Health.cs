@@ -10,6 +10,7 @@ public class Health : MonoBehaviour {
     public Shader defaultShader;
     public Shader outlineShader;
 
+    public int enemyBaseHealth;
     public int health;
     public int maxHealth;
     public bool isFirstHit = true;
@@ -148,6 +149,7 @@ public class Health : MonoBehaviour {
             {
                 if (GetComponent<EnemyCombatManager>() != null)
                 {
+                    maxHealth = enemyBaseHealth * PlayFabDataStore.playerLevel + (int)Mathf.Pow(PlayFabDataStore.playerLevel, 2);
                     health = maxHealth;
                     isFirstHit = true;
                     UpdateHealth();
