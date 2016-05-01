@@ -240,7 +240,7 @@ MonoBehaviour:
   DestoyOnHit: 1
   FixRotation: 0
   LifeTimeAfterHit: 0
-  LifeTime: 1.5
+  LifeTime: 3
 --- !u!114 &11499646
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -252,7 +252,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aea3c196ff927664fac017e6ff812a54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LifeTime: 3
+  LifeTime: 1
   SpawnAfterDead: {fileID: 0}
 --- !u!135 &13512964
 SphereCollider:

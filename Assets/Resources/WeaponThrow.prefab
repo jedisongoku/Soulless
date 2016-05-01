@@ -64,6 +64,7 @@ GameObject:
   - 135: {fileID: 13571342}
   - 54: {fileID: 5463976}
   - 114: {fileID: 11469570}
+  - 114: {fileID: 11426604}
   m_Layer: 0
   m_Name: WeaponThrow
   m_TagString: Untagged
@@ -249,6 +250,17 @@ MonoBehaviour:
   FixRotation: 0
   LifeTimeAfterHit: 1
   LifeTime: 5
+--- !u!114 &11426604
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 144036}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c38bf5bdaf85b0348b6bfeaeb6bc3872, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &11427912
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -286,7 +298,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aea3c196ff927664fac017e6ff812a54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LifeTime: 3
+  LifeTime: 1
   SpawnAfterDead: {fileID: 0}
 --- !u!135 &13571342
 SphereCollider:
