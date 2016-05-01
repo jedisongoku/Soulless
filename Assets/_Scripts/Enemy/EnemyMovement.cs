@@ -130,7 +130,7 @@ public class EnemyMovement :MonoBehaviour
                         combatManager.playerAttackList.Add(GameManager.players[i]);
                     }
                 }
-                if (Vector3.Distance(transform.position, GameManager.players[i].transform.position) > aggroRange && !isInCombat)
+                if (Vector3.Distance(transform.position, GameManager.players[i].transform.position) > aggroRange /*&& !isInCombat*/)
                 {
                     if (combatManager.playerAttackList.Contains(GameManager.players[i]))
                     {
