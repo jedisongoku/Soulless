@@ -40,16 +40,12 @@ public class FriendsList : MonoBehaviour
     public void AddFriendPlayFab()
     {
         PlayFabApiCalls.AddFriend(friendEmail.text);
+        Invoke("LoadFriendsList", 2);
     }
 
     public void CancelAddFriend()
     {
         addFriendPanel.gameObject.SetActive(false);
-    }
-
-    public void RemoveFriend()
-    {
-
     }
 
     
