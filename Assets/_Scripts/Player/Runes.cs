@@ -117,7 +117,6 @@ public class Runes : MonoBehaviour
         }
     }
 
-    
 
     int GetPlayerResource()
     {
@@ -781,6 +780,73 @@ public class Runes : MonoBehaviour
             }
             mainEnemy = null;
             targetEnemy = null;
+        }
+    }
+
+    /// <summary>
+    /// Gather an infusion of energy around you that explodes after 1.5 seconds for 945% weapon damage as Arcane to all enemies withing 12 yards.
+    /// </summary>
+    public void Rune_ExplosiveBlast()
+    {
+        StartCoroutine(ExplosiveBlastCoroutine());
+    }
+
+    /// <summary>
+    /// Explosive Blast Coroutine Call
+    /// </summary>
+    /// <returns></returns>
+    IEnumerator ExplosiveBlastCoroutine()
+    {
+        runeId = "Rune_ExplosiveBlast";
+
+        if (attackTimerSkillSlot2 >= PlayFabDataStore.catalogRunes[runeId].cooldown)
+        {
+            if (GetPlayerResource() >= PlayFabDataStore.catalogRunes[runeId].resourceUsage)
+            {
+                attackTimerSkillSlot2 = 0f;
+                HUD_Manager.hudManager.ActionBarCooldownImage2.enabled = true;
+                HUD_Manager.hudManager.ActionBarCooldownImage2.fillAmount = 1;
+                updateCooldownImage2 = true;
+                SetPlayerResource(-PlayFabDataStore.catalogRunes[runeId].resourceUsage);
+
+                photonView.RPC("InstantiateParticleEffects", PhotonTargets.All, photonView.viewID, "HolyShock_Effect", transform.position, Quaternion.identity, null, true);
+
+                yield return new WaitForSeconds(PlayFabDataStore.catalogRunes[runeId].effectTime);
+                runeId = "Rune_ExplosiveBlast";
+                Debug.Log("Before Collider: " + gameObject.transform.position + "Radius: " + PlayFabDataStore.catalogRunes[runeId].attackRadius);
+
+                Collider[] hitEnemies = Physics.OverlapSphere(gameObject.transform.position, PlayFabDataStore.catalogRunes[runeId].attackRadius, LayerMask.GetMask("Enemy"));
+                Debug.Log("After Collider " + hitEnemies.Length);
+
+                photonView.RPC("InstantiateParticleEffects", PhotonTargets.All, photonView.viewID, "HolyShock_Damage", transform.position, Quaternion.identity, null, false);
+
+
+                for (int i = 0; i < hitEnemies.Length; i++)
+                {
+                    Debug.Log(hitEnemies[i].tag);
+                    if (hitEnemies[i].CompareTag("Enemy"))
+                    {
+                        tempAttackDamage = PlayFabDataStore.playerSpellDamage;
+                        tempCriticalChance = PlayFabDataStore.playerCriticalChance;
+                        tempResourceGeneration = PlayFabDataStore.catalogRunes[runeId].resourceGeneration;
+                        tempDamageType = PlayFabDataStore.catalogRunes[runeId].damageType;
+
+                        targetEnemy = hitEnemies[i].gameObject;
+                        foreach (var modifier in PlayFabDataStore.playerActiveModifierRunes)
+                        {
+                            if (modifier.Value == 2)
+                            {
+                                var loadingMethod = GetType().GetMethod(modifier.Key);
+                                var arguments = new object[] { targetEnemy };
+                                loadingMethod.Invoke(this, arguments);
+                            }
+                        }
+                        ApplyDamage(targetEnemy);
+                    }
+                }
+                mainEnemy = null;
+                targetEnemy = null;
+            }
         }
     }
 
