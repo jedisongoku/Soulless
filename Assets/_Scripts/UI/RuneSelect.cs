@@ -144,17 +144,21 @@ public class RuneSelect : MonoBehaviour
             {
                 if(PlayFabDataStore.catalogRunes[runeId].cooldown == 0)
                 {
-                    UITooltip.AddLineColumn("Cost: " + PlayFabDataStore.catalogRunes[runeId].resourceUsage + " Resource");
+                    UITooltip.AddLine("Cost: " + PlayFabDataStore.catalogRunes[runeId].resourceUsage + " Resource");
                 }
                 else
-                {
-                    UITooltip.AddLineColumn("Cooldown: " + PlayFabDataStore.catalogRunes[runeId].cooldown + " seconds");
+                {                  
+                    if(PlayFabDataStore.catalogRunes[runeId].resourceUsage != 0)
+                    {
+                        UITooltip.AddLine("Cost: " + PlayFabDataStore.catalogRunes[runeId].resourceUsage + " Resource");
+                    }
+                    UITooltip.AddLine("Cooldown: " + PlayFabDataStore.catalogRunes[runeId].cooldown + " seconds");
                 }
                 
             }
             else
             {
-                UITooltip.AddLineColumn("Generate: " + PlayFabDataStore.catalogRunes[runeId].resourceGeneration + " Resource");
+                UITooltip.AddLine("Generate: " + PlayFabDataStore.catalogRunes[runeId].resourceGeneration + " Resource");
             }
         }
         

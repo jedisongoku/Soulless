@@ -968,6 +968,7 @@ public class Runes : MonoBehaviour
         yield return new WaitForSeconds(PlayFabDataStore.catalogRunes["Rune_KillingRampage"].effectTime);
 
         CharacterStats.characterStats.CalculateCriticalChance();
+        Debug.Log("Crit " + PlayFabDataStore.playerCriticalChance);
     }
 
     /// <summary>

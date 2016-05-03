@@ -21,7 +21,14 @@ public class FriendsList : MonoBehaviour
 
     public void LoadFriendsList()
     {
-        
+        if(friendList.Count != 0)
+        {
+            foreach(var friendObj in GetComponentsInChildren<JoinFriendsRoom>())
+            {
+                Destroy(friendObj.transform.gameObject);
+            }
+        }
+
         friendList.Clear();
         foreach(var friend in PlayFabDataStore.friendsList)
         {
@@ -41,6 +48,7 @@ public class FriendsList : MonoBehaviour
     public void AddFriendPlayFab()
     {
         PlayFabApiCalls.AddFriend(friendEmail.text);
+        addFriendPanel.gameObject.SetActive(false);
         Invoke("LoadFriendsList", 2);
     }
 

@@ -55,7 +55,7 @@ namespace UnityEngine.UI
 		protected override void Awake()
 		{
 			base.Awake();
-			base.allowThrowAway = true;
+			base.allowThrowAway = false;
 		}
 		
 		/// <summary>

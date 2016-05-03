@@ -493,7 +493,11 @@ public class PlayFabApiCalls : MonoBehaviour
         {
             foreach(var friend in result.Friends)
             {
-                PlayFabDataStore.friendsList.Add(friend.Username, friend.FriendPlayFabId);
+                if(!PlayFabDataStore.friendsList.ContainsKey(friend.Username))
+                {
+                    PlayFabDataStore.friendsList.Add(friend.Username, friend.FriendPlayFabId);
+                }
+                
             }
 
         },
