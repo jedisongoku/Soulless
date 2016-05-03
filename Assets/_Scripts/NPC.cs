@@ -172,7 +172,7 @@ public class NPC : MonoBehaviour {
                 EndQuest();
             }
             //if you aren't finishing a quest and this npc has quests to give
-            if (finishingQuest == false && startingQuests.Count != 0)
+            else if (finishingQuest == false && startingQuests.Count != 0)
             {
                 StartQuest(0);
             }
