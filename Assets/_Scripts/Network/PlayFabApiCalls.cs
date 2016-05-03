@@ -256,39 +256,43 @@ public class PlayFabApiCalls : MonoBehaviour
                     {
                         foreach (var currency in PlayFabDataStore.catalogQuests[quest].currencies)
                         {
+                            Debug.Log("Adding Currency " + currency.Value.ToString());
                             AddUserCurrency(int.Parse(currency.Value.ToString()));
                         }
                     }
                 }
-                if (splitResult[67] == "Skill" || splitResult[67] == "Modifier")
+                if (splitResult.Length > 67)
                 {
-                    if (!PlayFabDataStore.playerAllRunes.ContainsKey(splitResult[59]))
+                    if (splitResult[67] == "Skill" || splitResult[67] == "Modifier")
                     {
-                        Debug.Log("Quest 1");
-                        PlayFabDataStore.playerAllRunes.Add(splitResult[59], new PlayerRune(splitResult[59], splitResult[63], splitResult[67], PlayFabDataStore.catalogRunes[splitResult[59]].displayName, "0"));
-                        Debug.Log("Quest 2");
-                        SetCustomDataOnItem("Active", "0", splitResult[63]);
-                        Debug.Log("Quest 3");
-                        RuneWindow.SortAllRunes();
-                        Debug.Log("Quest 4");
-                    }
-                }
-                else
-                if(splitResult[67] == "Item")
-                {
-                    List<PlayerItemInfo> itemInfoList = new List<PlayerItemInfo>();
-                    SetCustomDataOnItem("IsEquipped", "0", splitResult[63]);
-                    PlayFabDataStore.playerInventory.Add(splitResult[59]);
-                    PlayerItemInfo itemInfo = new PlayerItemInfo(splitResult[59], splitResult[63], "0");
-
-                    if (PlayFabDataStore.playerInventoryInfo.ContainsKey(splitResult[59]))
-                    {
-                        PlayFabDataStore.playerInventoryInfo[splitResult[59]].Add(itemInfo);
+                        if (!PlayFabDataStore.playerAllRunes.ContainsKey(splitResult[59]))
+                        {
+                            Debug.Log("Quest 1");
+                            PlayFabDataStore.playerAllRunes.Add(splitResult[59], new PlayerRune(splitResult[59], splitResult[63], splitResult[67], PlayFabDataStore.catalogRunes[splitResult[59]].displayName, "0"));
+                            Debug.Log("Quest 2");
+                            SetCustomDataOnItem("Active", "0", splitResult[63]);
+                            Debug.Log("Quest 3");
+                            RuneWindow.SortAllRunes();
+                            Debug.Log("Quest 4");
+                        }
                     }
                     else
+                    if (splitResult[67] == "Item")
                     {
-                        PlayFabDataStore.playerInventoryInfo.Add(splitResult[59], itemInfoList);
-                        PlayFabDataStore.playerInventoryInfo[splitResult[59]].Add(itemInfo);
+                        List<PlayerItemInfo> itemInfoList = new List<PlayerItemInfo>();
+                        SetCustomDataOnItem("IsEquipped", "0", splitResult[63]);
+                        PlayFabDataStore.playerInventory.Add(splitResult[59]);
+                        PlayerItemInfo itemInfo = new PlayerItemInfo(splitResult[59], splitResult[63], "0");
+
+                        if (PlayFabDataStore.playerInventoryInfo.ContainsKey(splitResult[59]))
+                        {
+                            PlayFabDataStore.playerInventoryInfo[splitResult[59]].Add(itemInfo);
+                        }
+                        else
+                        {
+                            PlayFabDataStore.playerInventoryInfo.Add(splitResult[59], itemInfoList);
+                            PlayFabDataStore.playerInventoryInfo[splitResult[59]].Add(itemInfo);
+                        }
                     }
                 }
 
