@@ -21,6 +21,7 @@ public class FriendsList : MonoBehaviour
 
     public void LoadFriendsList()
     {
+        
         friendList.Clear();
         foreach(var friend in PlayFabDataStore.friendsList)
         {

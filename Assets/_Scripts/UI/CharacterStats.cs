@@ -111,24 +111,6 @@ public class CharacterStats : MonoBehaviour {
         GameManager.players[0].GetComponent<Health>().CharacterStatsUpdateHealth(PlayFabDataStore.playerMaxHealth);
     }
 
-    /*public void StatsRightButton()
-    {
-        if(!statsPage2.activeInHierarchy)
-        {
-            statsPage2.SetActive(true);
-            statsPage1.SetActive(false);
-        }
-    }
-
-    public void StatsLeftButton()
-    {
-        if (!statsPage1.activeInHierarchy)
-        {
-            statsPage1.SetActive(true);
-            statsPage2.SetActive(false);
-        }
-    }*/
-
     void CalculateVitality()
     {
         int vitality = 0;

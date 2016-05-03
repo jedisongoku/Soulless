@@ -37,7 +37,7 @@ public class StatsSelect : MonoBehaviour
 
     public static void CalculateStatsBuilderPoints()
     {
-        PlayFabDataStore.playerStatBuilderMaxPoint = (PlayFabDataStore.playerLevel) * 3;
+        PlayFabDataStore.playerStatBuilderMaxPoint = (PlayFabDataStore.playerLevel - 1) * 3;
         PlayFabDataStore.playerStatBuilderUsedPoint = 0;
         foreach (var stats in PlayFabDataStore.statsBuilder)
         {

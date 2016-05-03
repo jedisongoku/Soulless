@@ -68,9 +68,9 @@ public class NPC : MonoBehaviour {
         {
             if (player != null && Vector3.Distance(player.transform.position, transform.position) < 20)
             {
-                foreach (var quest in PlayFabDataStore.playerQuestLog)
+                foreach (var quest in endingQuests)
                 {
-                    if (endingQuests.Contains(quest))
+                    if (PlayFabDataStore.playerQuestLog.Contains(quest))
                     {
                         if (GetComponentInChildren<SkinnedMeshRenderer>() != null)
                         {
