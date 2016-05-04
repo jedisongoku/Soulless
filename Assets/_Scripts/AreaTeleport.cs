@@ -45,6 +45,7 @@ public class AreaTeleport : MonoBehaviour {
             HUD_Manager.hudManager.ShowLoading(2);
             player.transform.position = dungeonStartPoint.position;
             Invoke("ActivatePlayerNavigation", 1);
+            GetComponent<PhotonView>().RPC("SendPosition", PhotonTargets.Others, GetComponent<PhotonView>().viewID, gameObject.transform.position);
         }
     }
 

@@ -119,12 +119,14 @@ public class NetworkPlayerScript : MonoBehaviour {
     [PunRPC]
     void SendPosition(int viewID, Vector3 position)
     {
+        GetComponent<NavMeshAgent>().enabled = false;
         if(photonView.viewID == viewID)
         {
 
             gameObject.transform.position = position;
         }
-        
+        GetComponent<NavMeshAgent>().enabled = true;
+
     }
 
     [PunRPC]
