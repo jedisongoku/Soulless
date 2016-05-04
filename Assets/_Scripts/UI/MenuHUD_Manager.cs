@@ -5,9 +5,11 @@ public class MenuHUD_Manager : MonoBehaviour
 {
     public Canvas login;
     public Canvas mainMenu;
+    public Texture2D cursor;
 
     void Awake()
     {
+        Cursor.SetCursor(cursor, Vector2.zero, CursorMode.Auto);
         if(PlayFabDataStore.playFabId != null)
         {
             login.gameObject.SetActive(false);
