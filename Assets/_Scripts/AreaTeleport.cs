@@ -45,7 +45,7 @@ public class AreaTeleport : MonoBehaviour {
             HUD_Manager.hudManager.ShowLoading(2);
             player.transform.position = dungeonStartPoint.position;
             Invoke("ActivatePlayerNavigation", 1);
-            player.GetComponent<PhotonView>().RPC("SendPosition", PhotonTargets.Others, GetComponent<PhotonView>().viewID, gameObject.transform.position);
+            player.GetComponent<PhotonView>().RPC("SendPosition", PhotonTargets.Others, player.GetComponent<PhotonView>().viewID, dungeonStartPoint.position);
         }
     }
 
@@ -54,34 +54,4 @@ public class AreaTeleport : MonoBehaviour {
         playerNavigation.enabled = true;
     }
 
-    /*public string levelToTeleport;
-    public string spawnPointName = "SpawnPoint";
-
-    GameObject player;
-    NetworkManagerScript networkManager;
-	// Use this for initialization
-	void Start ()
-    {
-        player = GameObject.FindGameObjectWithTag("Player");
-        networkManager = GameObject.Find("NetworkManager").GetComponent<NetworkManagerScript>();
-    }
-	
-	// Update is called once per frame
-	void Update ()
-    {
-        if(player == null)
-        {
-            player = GameObject.FindGameObjectWithTag("Player");
-        }
-        if (player != null && Vector3.Distance(player.transform.position, transform.position) < 2)
-        {
-            if (spawnPointName != null)
-            {
-               networkManager.spawnPointName = spawnPointName;
-            }
-            PhotonNetwork.LoadLevel(levelToTeleport);
-        }
-    }*/
-
-   
 }

@@ -75,6 +75,8 @@ public class DropItem : MonoBehaviour
     [PunRPC]
     void SetItemDetails(int sourceID, string name, string itemID, string itemClass)
     {
+        transform.LookAt(Camera.main.transform);
+        transform.Rotate(new Vector3(0, 180, 0));
         GameObject source = PhotonView.Find(sourceID).gameObject;
         source.GetComponent<TextMesh>().text = name;
         source.GetComponent<DroppedItem>().itemId = itemID;

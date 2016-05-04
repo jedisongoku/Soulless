@@ -119,13 +119,15 @@ public class NetworkPlayerScript : MonoBehaviour {
     [PunRPC]
     void SendPosition(int viewID, Vector3 position)
     {
-        GetComponent<NavMeshAgent>().enabled = false;
+
         if(photonView.viewID == viewID)
         {
-
+            GetComponent<NavMeshAgent>().Stop();
+            GetComponent<NavMeshAgent>().ResetPath();
+            GetComponent<NavMeshAgent>().enabled = false;
             gameObject.transform.position = position;
+            GetComponent<NavMeshAgent>().enabled = true;
         }
-        GetComponent<NavMeshAgent>().enabled = true;
 
     }
 
@@ -134,6 +136,7 @@ public class NetworkPlayerScript : MonoBehaviour {
     {
         if(photonView.viewID == viewID)
         {
+            
             GameObject source = PhotonView.Find(viewID).gameObject;
             source.transform.LookAt(movePosition);
             source.GetComponent<NavMeshAgent>().SetDestination(movePosition);
