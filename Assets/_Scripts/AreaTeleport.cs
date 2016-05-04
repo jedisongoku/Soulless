@@ -26,7 +26,9 @@ public class AreaTeleport : MonoBehaviour {
     }
     void OnMouseDown()
     {
-       
+        player = GameObject.FindGameObjectWithTag("Player");
+        playerNavigation = player.GetComponent<NavMeshAgent>();
+
         if (Vector3.Distance(player.transform.position, transform.position) <= 8)
         {
             if (dungeon != null)
