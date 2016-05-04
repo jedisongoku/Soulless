@@ -21,6 +21,7 @@ public class DungeonExit : MonoBehaviour
     {
         foreach (var quest in PlayFabDataStore.playerQuestLog)
         {
+
             if (quest == "Quest_ReturnArtifact")
             {
                 portal.SetActive(true);

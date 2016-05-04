@@ -20,13 +20,21 @@ public class AreaTeleport : MonoBehaviour {
         player = GameManager.players[0];
         playerNavigation = player.GetComponent<NavMeshAgent>();
     }
-
+    void OnEnable()
+    {
+        GetLocalPlayer();
+    }
     void OnMouseDown()
     {
-        if(Vector3.Distance(player.transform.position, transform.position) <= 8)
+       
+        if (Vector3.Distance(player.transform.position, transform.position) <= 8)
         {
-            dungeon.SetActive(true);
-            Debug.Log("Moing to the Dungeon");
+            if (dungeon != null)
+            {
+                dungeon.SetActive(true);
+                Debug.Log("Moing to the Dungeon");
+            }
+           
             playerNavigation.Stop();
             playerNavigation.ResetPath();
             //playerNavigation.Warp(dungeonStartPoint.position);

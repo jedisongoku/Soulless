@@ -5,7 +5,6 @@ using System.Collections.Generic;
 public class QuestObject : MonoBehaviour
 {
 
-    public List<string> dialogue;
     public Shader defaultShader;
     public Shader outlineShader;
     public Color questOutlineColor;
@@ -26,12 +25,7 @@ public class QuestObject : MonoBehaviour
     [Header("Quest IDs this NPC can end")]
     public List<string> endingQuests;
 
-    //offset from transform.position for each npc
-    public Vector3 faceLocation;
-    //how close to set camera to npc's face
-    public float faceDistance;
-    //name of npc
-    public string npcName;
+   
 
     private bool startingQuest = false;
     private bool finishingQuest = false;
@@ -39,11 +33,11 @@ public class QuestObject : MonoBehaviour
     private int endQuestId;
     private GameObject player;
     //private Camera dialogueCamera;
-    private Dialogue dialogueManager;
+    //private Dialogue dialogueManager;
     private GameObject gameManager;
 
-    public Texture portraitImage;
-    //private Color questOutlineColor = new Color(255, 255, 0, 255);
+    public GameObject exitObject;
+    public bool hasExit = false;
 
 
     void Start()
@@ -51,7 +45,7 @@ public class QuestObject : MonoBehaviour
 
         player = GameObject.FindGameObjectWithTag("Player");
         gameManager = GameObject.Find("GameManager");
-        dialogueManager = gameManager.GetComponent<Dialogue>();
+        //dialogueManager = gameManager.GetComponent<Dialogue>();
         //dialogueCamera = GameObject.Find("DialogueCamera").GetComponent<Camera>();
         questPanel = gameManager.GetComponent<GameManager>().quest;
         acceptButton = questPanel.gameObject.transform.Find("Button (Accept)").gameObject;
@@ -200,6 +194,10 @@ public class QuestObject : MonoBehaviour
             declineButton.SetActive(true);
             completeButton.SetActive(false);
             questPanel.gameObject.SetActive(true);
+            if (hasExit)
+            {
+                exitObject.SetActive(true);
+            }
             LoadQuest.OnAccept += SwitchValues;
         }
     }
@@ -216,6 +214,7 @@ public class QuestObject : MonoBehaviour
         declineButton.SetActive(false);
         completeButton.SetActive(true);
         questPanel.gameObject.SetActive(true);
+       
         LoadQuest.OnAccept += SwitchValues;
 
         /*//if the player has accepted this quest and has not completed it
