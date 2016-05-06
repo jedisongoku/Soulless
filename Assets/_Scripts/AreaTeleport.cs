@@ -18,7 +18,10 @@ public class AreaTeleport : MonoBehaviour {
     void GetLocalPlayer()
     {
         player = GameObject.FindGameObjectWithTag("Player");
-        playerNavigation = player.GetComponent<NavMeshAgent>();
+        if (player != null)
+        {
+            playerNavigation = player.GetComponent<NavMeshAgent>();
+        }
     }
     void OnEnable()
     {

@@ -24,8 +24,12 @@ public class QuestObject : MonoBehaviour
     //what quests this npc can complete
     [Header("Quest IDs this NPC can end")]
     public List<string> endingQuests;
+    //follow up quests (a quest is a follow up quest to an ending quest of the same index)
+    [Header("Follow Up Quest IDs")]
+    public List<string> followQuests;
 
-   
+
+
 
     private bool startingQuest = false;
     private bool finishingQuest = false;
@@ -216,7 +220,7 @@ public class QuestObject : MonoBehaviour
         questPanel.gameObject.SetActive(true);
        
         LoadQuest.OnAccept += SwitchValues;
-
+        LoadQuest.OnAccept += FollowUpQuest;
         /*//if the player has accepted this quest and has not completed it
         if (PlayFabDataStore.playerQuestLog.Contains(endQuestId[questIndex])
             && !PlayFabDataStore.playerCompletedQuests.Contains(endQuestId[questIndex]))
@@ -230,7 +234,28 @@ public class QuestObject : MonoBehaviour
             //questPanel.SetActive(true);
         }*/
     }
-
+    public void FollowUpQuest()
+    {
+        int questIndex = endQuestId;
+        LoadQuest.OnAccept -= SwitchValues;
+        //if this npc is not a quest giver
+        if (followQuests.Count == 0)
+        {
+            return;
+        }
+        //if the player has not already accepted this quest or completed this quest
+        if (!PlayFabDataStore.playerQuestLog.Contains(followQuests[questIndex])
+            && !PlayFabDataStore.playerCompletedQuests.Contains(followQuests[questIndex]))
+        {
+            //set the quest panel's quest id to the quest carried by the current npc
+            questPanel.GetComponent<LoadQuest>().questId = followQuests[questIndex];
+            acceptButton.SetActive(true);
+            declineButton.SetActive(true);
+            completeButton.SetActive(false);
+            questPanel.gameObject.SetActive(true);
+            LoadQuest.OnAccept += SwitchValues;
+        }
+    }
 
     void OnMouseOver()
     {
