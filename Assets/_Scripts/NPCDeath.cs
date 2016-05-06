@@ -14,7 +14,8 @@ public class NPCDeath : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-        if (PlayFabDataStore.playerQuestLog.Contains(triggerQuest))
+        if (PlayFabDataStore.playerQuestLog.Contains(triggerQuest) ||
+            PlayFabDataStore.playerCompletedQuests.Contains(triggerQuest))
         {
             if (deactivate)
             {
