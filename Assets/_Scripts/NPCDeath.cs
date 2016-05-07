@@ -4,8 +4,11 @@ using System.Collections;
 public class NPCDeath : MonoBehaviour {
 
     public GameObject npc;
+    [Header("False activates npc")]
     public bool deactivate = true;
     public string triggerQuest;
+    [Header("False activates only if quest is complete")]
+    public bool containsQuest = true;
 	// Use this for initialization
 	void Start () {
 	
@@ -14,16 +17,33 @@ public class NPCDeath : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-        if (PlayFabDataStore.playerQuestLog.Contains(triggerQuest) ||
-            PlayFabDataStore.playerCompletedQuests.Contains(triggerQuest))
+        if (containsQuest)
         {
-            if (deactivate)
+            if (PlayFabDataStore.playerQuestLog.Contains(triggerQuest) ||
+                PlayFabDataStore.playerCompletedQuests.Contains(triggerQuest))
             {
-                this.gameObject.SetActive(false);
+                if (deactivate)
+                {
+                    this.gameObject.SetActive(false);
+                }
+                else
+                {
+                    npc.SetActive(true);
+                }
             }
-            else
+        }
+        else
+        {
+            if (PlayFabDataStore.playerCompletedQuests.Contains(triggerQuest))
             {
-                npc.SetActive(true);
+                if (deactivate)
+                {
+                    this.gameObject.SetActive(false);
+                }
+                else
+                {
+                    npc.SetActive(true);
+                }
             }
         }
 

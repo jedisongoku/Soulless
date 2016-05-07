@@ -40,7 +40,7 @@ public class QuestObject : MonoBehaviour
     //private Dialogue dialogueManager;
     private GameObject gameManager;
 
-    public GameObject exitObject;
+   
     public bool hasExit = false;
 
 
@@ -198,10 +198,7 @@ public class QuestObject : MonoBehaviour
             declineButton.SetActive(true);
             completeButton.SetActive(false);
             questPanel.gameObject.SetActive(true);
-            if (hasExit)
-            {
-                exitObject.SetActive(true);
-            }
+           
             LoadQuest.OnAccept += SwitchValues;
         }
     }

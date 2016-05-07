@@ -303,7 +303,10 @@ public class Health : MonoBehaviour {
                 anim.SetTrigger("FIGHT IDLE");
 
             }
-            GetComponent<NavMeshAgent>().ResetPath();
+            if (GetComponent<NavMeshAgent>() != null)
+            {
+                GetComponent<NavMeshAgent>().ResetPath();
+            }
             if (freezeTimer >= maxFreezeTime)
             {
                 GetComponent<NavMeshAgent>().speed = navMeshSpeed;
