@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class NPCDeath : MonoBehaviour {
+public class QuestTrigger : MonoBehaviour {
 
     public GameObject npc;
     [Header("False activates npc")]

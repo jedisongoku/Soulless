@@ -4,13 +4,15 @@ using System.Collections;
 
 public class NetworkPlayerScript : MonoBehaviour {
 
-    public bool battleArena = false;
+    //determines if a player can attack other players
+    bool battleArena = false;
+    //Reference to player's photon view and animator components
     private PhotonView photonView;
     private Animator anim;
 
     private Vector3 playerPosition = Vector3.zero;
     private Quaternion playerRotation = Quaternion.identity;
-    //private int playerHealth;
+    
 
 
     // Use this for initialization
@@ -30,8 +32,7 @@ public class NetworkPlayerScript : MonoBehaviour {
         {
             gameObject.tag = "Player";
             gameObject.name = "LOCAL player";
-            //new name change
-            //gameObject.name = photonView.ownerId.ToString();
+           
         }
         else
         {
@@ -42,13 +43,13 @@ public class NetworkPlayerScript : MonoBehaviour {
                 //set player's layer to default so you can click on them
                 gameObject.layer = LayerMask.NameToLayer("Enemy");
                 gameObject.name = "Network Enemy";
-                //gameObject.name = photonView.ownerId.ToString();
+               
             }
             else
             {
                 gameObject.tag = "Player";
                 gameObject.name = "Network player";
-                //gameObject.name = photonView.ownerId.ToString();
+                
             }
            
         }
@@ -72,16 +73,17 @@ public class NetworkPlayerScript : MonoBehaviour {
         }
 
     }
+    //RPC call to send animation triggers to other clients
     [PunRPC]
     void SendTrigger(int sentId, string triggerName)
     {
-        //Debug.Log("I received an animation trigger for " + sentId + " and my id is " + photonView.viewID);
+        
         if (photonView.viewID == sentId)
         {
            anim.SetTrigger(triggerName);
         }
     }
-
+    //RPC call to send particle effects to other clients
     [PunRPC]
     void InstantiateParticleEffects(int viewID, string particleName, Vector3 position, Quaternion rotation, int targetViewID, bool isChild)
     {
@@ -110,12 +112,14 @@ public class NetworkPlayerScript : MonoBehaviour {
         }
 
     }
+
+    //sync position when a player joins
     void OnPhotonPlayerConnected(PhotonPlayer connected)
     {
         Debug.Log("OnPhotonPlayerConnected position rpc");
         photonView.RPC("SendPosition", PhotonTargets.Others, photonView.viewID, gameObject.transform.position);
     }
-
+    //RPC call to sync position to other clients
     [PunRPC]
     void SendPosition(int viewID, Vector3 position)
     {
@@ -130,7 +134,7 @@ public class NetworkPlayerScript : MonoBehaviour {
         }
 
     }
-
+    //RPC call to send movement destination to other clients
     [PunRPC]
     void SendMoveDestination(int viewID, Vector3 movePosition, float stopDistance)
     {
@@ -143,35 +147,18 @@ public class NetworkPlayerScript : MonoBehaviour {
             source.GetComponent<NavMeshAgent>().stoppingDistance = stopDistance;
         }
     }
-
+    //constantly sync rotation of players across clients
     void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
     {
         if (stream.isWriting)
         {
             //We own this player: send the others our data
-            //stream.SendNext(transform.position);
             stream.SendNext(transform.rotation);
-            //send all animator variables
-            if (anim != null)
-            {
-                //stream.SendNext(anim.GetFloat("MOVE"));
-                //stream.SendNext(anim.GetBool("INCOMBAT"));
-                //stream.SendNext(anim.GetBool("Attack"));
-            }
         }
         else
         {
-            //Network player, receive data
-            //playerPosition = (Vector3)stream.ReceiveNext();
+            //Network player, receive data          
             playerRotation = (Quaternion)stream.ReceiveNext();
-            //receive animator variables from other player
-            if (anim != null)
-            {
-                //anim.SetFloat("MOVE", (float)stream.ReceiveNext());
-                //anim.SetBool("INCOMBAT", (bool)stream.ReceiveNext());
-                //anim.SetBool("Attack", (bool)stream.ReceiveNext());
-            }
-
         }
     }
 
