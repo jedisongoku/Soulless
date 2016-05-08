@@ -9,8 +9,8 @@ PlayerSettings:
   targetDevice: 2
   useOnDemandResources: 0
   accelerometerFrequency: 60
-  companyName: DefaultCompany
-  productName: SeniorProjectRPG
+  companyName: SeniorProject
+  productName: Soulless
   defaultCursor: {fileID: 2800000, guid: b798913b0cf5b57498b3f23baac931f4, type: 3}
   cursorHotspot: {x: 0, y: 0}
   m_ShowUnitySplashScreen: 1
@@ -173,7 +173,7 @@ PlayerSettings:
   - m_BuildTarget: 
     m_Icons:
     - serializedVersion: 2
-      m_Icon: {fileID: 0}
+      m_Icon: {fileID: 2800000, guid: 4e3cc6b18a14b47729f4a0a6691c400c, type: 3}
       m_Width: 128
       m_Height: 128
   m_BuildTargetBatching: []
