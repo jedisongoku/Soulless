@@ -7,7 +7,7 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: zombie_01
-  m_Shader: {fileID: 4800000, guid: 76374158b4c4e5744b394e9290aae693, type: 3}
+  m_Shader: {fileID: 4800000, guid: 44b54c59129572f469a949a22bc08cd0, type: 3}
   m_ShaderKeywords: _TEX_ON
   m_LightmapFlags: 1
   m_CustomRenderQueue: 2000
@@ -43,12 +43,12 @@ Material:
         second: 0.078125
       data:
         first:
-          name: _DetailTex
-        second: 1
-      data:
-        first:
           name: _TintColor
         second: 0
+      data:
+        first:
+          name: _DetailTex
+        second: 1
       data:
         first:
           name: _VertexColor

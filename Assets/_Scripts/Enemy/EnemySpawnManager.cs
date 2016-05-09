@@ -5,8 +5,8 @@ using System.Collections.Generic;
 public class EnemySpawnManager : MonoBehaviour
 {
 
-    public enum enemyList { Orc_Melee, Orc_Ranged, Goblin_Melee, Goblin_Ranged, DarkElf_Melee, DarkElf_Ranged, Skeleton_Melee, Skeleton_Ranged };
-    public enum runeList { Rune_Slam, Rune_MagicBolt };
+    public enum enemyList { Orc_Melee, Orc_Ranged, Goblin_Melee, Goblin_Ranged, DarkElf_Melee, DarkElf_Ranged, Skeleton_Melee, Skeleton_Ranged, Boss };
+    public enum runeList { Rune_Slam, Rune_MagicBolt};
     public List<enemyList> enemies;
     public List<runeList> runes;
 
