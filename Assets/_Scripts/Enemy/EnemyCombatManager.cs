@@ -26,10 +26,11 @@ public class EnemyCombatManager : MonoBehaviour
 
         if (PhotonNetwork.isMasterClient)
         {
-            StartCoroutine(EnemyAttack());
+            StartCoroutine(EnemyAttack()); // Starts the enemy attack
         }
     }
 
+    // When the ownership of the room is changed, it checks if the client is the master to operate the enemies
     IPunCallbacks OnMasterClientSwitched()
     {
         if (PhotonNetwork.isMasterClient)
@@ -39,6 +40,7 @@ public class EnemyCombatManager : MonoBehaviour
         return null;
     }
 
+    // Runs every attack speed to apply damage to the targeted player
     IEnumerator EnemyAttack()
     {
         if (playerAttackList.Count != 0)
@@ -64,6 +66,7 @@ public class EnemyCombatManager : MonoBehaviour
         
     }
 
+    // Check if a player in the list is in the range for attacking
     bool InAttackingRange()
     {
         if (Vector3.Distance(transform.position, playerAttackList[0].transform.position) <= PlayFabDataStore.catalogRunes[selectRune].attackRange)

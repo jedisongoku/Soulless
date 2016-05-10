@@ -38,7 +38,7 @@ public class PlayerCombatManager : Runes
             skillSlot = 5;
 
             locatePosition(); //Find the clicked position and check if enemy clicked
-
+            //If a skill exist for this slot, call that skill function in the runes script
             if (PlayFabDataStore.playerActiveSkillRunes.ContainsKey(skillSlot))
             {
                 stopDistanceForAttack = PlayFabDataStore.catalogRunes[PlayFabDataStore.playerActiveSkillRunes[5]].attackRange;
@@ -55,6 +55,7 @@ public class PlayerCombatManager : Runes
 
             locatePosition();
 
+            //If a skill exist for this slot, call that skill function in the runes script
             if (PlayFabDataStore.playerActiveSkillRunes.ContainsKey(skillSlot))
             {
                 Invoke(PlayFabDataStore.playerActiveSkillRunes[skillSlot], 0);
@@ -66,7 +67,7 @@ public class PlayerCombatManager : Runes
         if (Input.GetKeyDown("1") || actionBarSkillId == "1")
         {
             skillSlot = 1;
-
+            //If a skill exist for this slot, call that skill function in the runes script
             if (PlayFabDataStore.playerActiveSkillRunes.ContainsKey(skillSlot))
             {
                 Invoke(PlayFabDataStore.playerActiveSkillRunes[skillSlot], 0);
@@ -79,7 +80,7 @@ public class PlayerCombatManager : Runes
         if(Input.GetKeyDown("2") || actionBarSkillId == "2")
         {
             skillSlot = 2;
-
+            //If a skill exist for this slot, call that skill function in the runes script
             if (PlayFabDataStore.playerActiveSkillRunes.ContainsKey(skillSlot))
             {
                 Invoke(PlayFabDataStore.playerActiveSkillRunes[skillSlot], 0);
@@ -93,7 +94,7 @@ public class PlayerCombatManager : Runes
                 Debug.Log("Player : " + player.name);
             }
             skillSlot = 3;
-
+            //If a skill exist for this slot, call that skill function in the runes script
             if (PlayFabDataStore.playerActiveSkillRunes.ContainsKey(skillSlot))
             {
                 Invoke(PlayFabDataStore.playerActiveSkillRunes[skillSlot], 0);
@@ -104,7 +105,7 @@ public class PlayerCombatManager : Runes
         if (Input.GetKeyDown("4") || actionBarSkillId == "4")
         {
             skillSlot = 4;
-
+            //If a skill exist for this slot, call that skill function in the runes script
             if (PlayFabDataStore.playerActiveSkillRunes.ContainsKey(skillSlot))
             {
                 Invoke(PlayFabDataStore.playerActiveSkillRunes[skillSlot], 0);
@@ -112,7 +113,6 @@ public class PlayerCombatManager : Runes
             }
         }
 
-        //playerAnimation.SetFloat("MOVE", controller.velocity.magnitude / controller.speed);
 
         if (targetEnemy != null && Vector3.Distance(targetEnemy.transform.position, transform.position) > stopDistanceForAttack)
         {
@@ -124,6 +124,7 @@ public class PlayerCombatManager : Runes
         }
     }
     
+    // Locates the clicked enemy's position
     void locatePosition()
     {
 
@@ -153,7 +154,7 @@ public class PlayerCombatManager : Runes
         }
     }
 
-
+    // Move to the located position
     void MoveToPosition()
     {
         photonView.RPC("SendMoveDestination", PhotonTargets.Others, photonView.viewID, position, controller.stoppingDistance);

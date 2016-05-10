@@ -38,8 +38,6 @@ public class DropItem : MonoBehaviour
             {
                 GameObject item = PhotonNetwork.Instantiate("DropItem", transform.position, transform.rotation, 0);
                 photonView.RPC("SetItemDetails", PhotonTargets.AllBufferedViaServer, item.GetComponent<PhotonView>().viewID, PlayFabDataStore.catalogItems[dropItemId].displayName, dropItemId, "Item");
-                /*item.GetComponent<TextMesh>().text = PlayFabDataStore.catalogItems[dropItemId].displayName;
-                item.GetComponent<DroppedItem>().itemId = dropItemId;*/
                 Debug.Log("Item Dropped : " + dropItemId);
             }
             else
@@ -47,16 +45,13 @@ public class DropItem : MonoBehaviour
             {
                 GameObject item = PhotonNetwork.Instantiate("DropItem", transform.position, transform.rotation, 0);
                 photonView.RPC("SetItemDetails", PhotonTargets.AllBufferedViaServer, item.GetComponent<PhotonView>().viewID, PlayFabDataStore.catalogRunes[dropItemId].displayName, dropItemId, PlayFabDataStore.catalogRunes[dropItemId].itemClass);
-                /*item.GetComponent<TextMesh>().text = PlayFabDataStore.catalogItems[dropItemId].displayName;
-                item.GetComponent<DroppedItem>().itemId = dropItemId;*/
+
                 Debug.Log("Item Dropped : " + dropItemId);
             }
             else
             {
                 GameObject item = PhotonNetwork.Instantiate("DropItem", transform.position, transform.rotation, 0);
                 photonView.RPC("SetItemDetails", PhotonTargets.AllBufferedViaServer, item.GetComponent<PhotonView>().viewID, "Gold", dropItemId, "Gold");
-                /*item.GetComponent<TextMesh>().text = "Gold";
-                item.GetComponent<DroppedItem>().itemId = dropItemId;*/
                 Debug.Log("Item Dropped : " + dropItemId);
             }
             itemReceived = true; // this is to double check the condition, in case of isItemreceived becomes true after the if statement

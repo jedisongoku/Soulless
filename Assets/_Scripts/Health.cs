@@ -68,7 +68,7 @@ public class Health : MonoBehaviour {
 
     void OnEnable()
     {
-
+        // If the player is controlled by the client, subscribe it to the OnRespawn event for resurrecting after death
         if(photonView.isMine)
         {
             if (CompareTag("Player"))
@@ -83,6 +83,7 @@ public class Health : MonoBehaviour {
 
     void OnDestroy()
     {
+        // If the player is controlled by the client, unsubscribe it to the OnRespawn event
         if (photonView.isMine)
         {
             if (CompareTag("Player"))
@@ -95,6 +96,7 @@ public class Health : MonoBehaviour {
 
     void OnDisable()
     {
+        // If the player is controlled by the client, unsubscribe it to the OnRespawn event
         if (photonView.isMine)
         {
             if (CompareTag("Player"))
@@ -111,11 +113,11 @@ public class Health : MonoBehaviour {
         enemyHealthText = HUD_Manager.hudManager.enemyHealthText;
 
 
-        Invoke("InitializeHealth", 1);
-        StartCoroutine("HealthUpdate");
+        Invoke("InitializeHealth", 1); // Initialize the health of the character
+        StartCoroutine("HealthUpdate"); // Start the health update coroutine that runs every 0.1 seconds to get updates. Use this instead of the Update function that runs every frame to increase performance.
         if (CompareTag("Player"))
         {
-            Invoke("StartHealthRegeneration", 5);
+            Invoke("StartHealthRegeneration", 5); // If the character is a player, start regenerating health
         }
 
         
@@ -126,9 +128,11 @@ public class Health : MonoBehaviour {
     {
         if (photonView.isMine)
         {
+            // Set player's health
             if (CompareTag("Player"))
             {
                 maxHealth = PlayFabDataStore.playerMaxHealth;
+                // Set player's health after respawn
                 if(isPlayerRespawned)
                 {
                     health = maxHealth / 2;
@@ -145,6 +149,7 @@ public class Health : MonoBehaviour {
         }
         if(PhotonNetwork.player.isMasterClient)
         {
+            // Set enemy's health
             if (CompareTag("Enemy"))
             {
                 if (GetComponent<EnemyCombatManager>() != null)
@@ -159,6 +164,7 @@ public class Health : MonoBehaviour {
         
     }
 
+    // Player Health Regenration
     void StartHealthRegeneration()
     {
         if(photonView.isMine)
@@ -168,22 +174,26 @@ public class Health : MonoBehaviour {
         
     }
 
+    // When a new player connected to the game, call UpdateHealth funtion to notify them about your health
     void OnPhotonPlayerConnected(PhotonPlayer newPlayer)
     {
         Invoke("UpdateHealth", 1);
     }
 
+    // Update the HUD with health and notify all clients
     public void UpdateHealth()
     {
         HUD_Manager.hudManager.SetHealthAndResource();
         photonView.RPC("SetHealth", PhotonTargets.AllViaServer, health, maxHealth);
     }
 
+    // Call when character stats updated
     public void CharacterStatsUpdateHealth(int _maxHealth)
     {
         photonView.RPC("SetHealth", PhotonTargets.AllViaServer, health, _maxHealth);
     }
 
+    // Server Call to set Health of every copy of the player
     [PunRPC]
     public void SetHealth(int _health, int _maxHealth)
     {
@@ -195,6 +205,8 @@ public class Health : MonoBehaviour {
         }
     }
 
+
+    // Server Call to set Damage Reduction on every copy of the player
     [PunRPC]
     public void SetDamageReduction(int viewId, bool _isDamageReduced, int _reducedDamagePercentage, float _immuneToControlTime)
     {
@@ -206,6 +218,7 @@ public class Health : MonoBehaviour {
 
     }
 
+    // Server Call to set Bleeding effect on every copy of the player
     [PunRPC]
     public void SetBleeding(int viewId, bool _isBleeding, int _maxBleedCount, int _bleedDamage)
     {
@@ -217,6 +230,7 @@ public class Health : MonoBehaviour {
         bleedCount = 1;
     }
 
+    // Server Call to set Freeze effect on every character of the player
     [PunRPC]
     public void SetFreeze(int viewId, bool _isFrozen, float _maxFreezeTime)
     {
@@ -224,6 +238,7 @@ public class Health : MonoBehaviour {
         maxFreezeTime = _maxFreezeTime;
     }
 
+    // Server Call to set Stun effect on every character of the player
     [PunRPC]
     public void SetStun(int viewId, bool _isStunned, float _maxStunTime)
     {
@@ -232,6 +247,7 @@ public class Health : MonoBehaviour {
 
     }
 
+    // Server Call to set Chill effect on every character of the player
     [PunRPC]
     public void SetChill(int viewId, bool _isChilled, float _maxChillTime, int _increasedDamagePercentage)
     {
@@ -240,6 +256,8 @@ public class Health : MonoBehaviour {
         increasedDamagePercentage = _increasedDamagePercentage;
     }
 
+
+    // Health Regeneration Coroutine
     IEnumerator HealthRegeneration()
     {
         if (PlayFabDataStore.playerCurrentHealth + Mathf.CeilToInt(PlayFabDataStore.playerSpirit / 5) <= PlayFabDataStore.playerMaxHealth)
@@ -266,6 +284,8 @@ public class Health : MonoBehaviour {
 
     }
 
+
+    // Update funtion of the Health script. Checks player debuffs.
     IEnumerator HealthUpdate()
     {
         if (isDamageReduced)
@@ -425,6 +445,7 @@ public class Health : MonoBehaviour {
         StartCoroutine("HealthUpdate");
     }
 
+    // Regular Update function only used to keep time, and set character's move animation
     void Update()
     {
         chillTimer += Time.deltaTime;
@@ -437,6 +458,7 @@ public class Health : MonoBehaviour {
         anim.SetFloat("MOVE", GetComponent<NavMeshAgent>().velocity.magnitude / GetComponent<NavMeshAgent>().speed);
     }
 
+    // Character's take damage funtion. It is called by attackers. After checking if any debuffs are on the character, applies the damage through server call
     public void TakeDamage(GameObject source, int damageTaken, float criticalChance, string damageType)
     {
         if (!dead)
@@ -459,12 +481,14 @@ public class Health : MonoBehaviour {
             }
         }
 
-        photonView.RPC("ApplyDamageTaken", PhotonTargets.AllViaServer, photonView.viewID, damageTaken, source.GetComponent<PhotonView>().viewID);
+        photonView.RPC("ApplyDamageTaken", PhotonTargets.AllViaServer, photonView.viewID, damageTaken, source.GetComponent<PhotonView>().viewID); 
     }
 
+    // The calculated damage is applied to all copies of the character
     [PunRPC]
     void ApplyDamageTaken(int sourceId, int damageTaken, int playerID)
     {
+        //Apply the damage only if the character is not dead
         if(!dead)
         {
             if (photonView.viewID == sourceId)
@@ -473,7 +497,6 @@ public class Health : MonoBehaviour {
                 {
                     if (health > damageTaken)
                     {
-                        //Debug.Log(gameObject + " takes " + damageTaken + " damage");
                         if(GetComponent<EnemyCombatManager>() != null)
                         {
                             if(isFirstHit && GetComponent<EnemyMovement>().isInCombat != true)
@@ -518,6 +541,7 @@ public class Health : MonoBehaviour {
         
     }
   
+    // Dead function called when a character is dead
     void Dead()
     {
         dead = true;
@@ -555,6 +579,8 @@ public class Health : MonoBehaviour {
         //GetComponent<Health>().enabled = false;       
         GetComponent<CapsuleCollider>().enabled = false;
     }
+
+    // Health bar activated for enemy
     void OnMouseOver()
     {
         if (CompareTag("Enemy"))
@@ -571,6 +597,7 @@ public class Health : MonoBehaviour {
         }
     }
 
+    // Health bar deactivated for enemy
     void OnMouseExit()
     {
         if (CompareTag("Enemy"))
@@ -590,15 +617,17 @@ public class Health : MonoBehaviour {
         return dead;
     }
 
+    // Subscribed event call when player wants to respawn
     void RespawnPlayer()
     {
         if(photonView.isMine)
         {
-            StartCoroutine(Respawn());
+            StartCoroutine(Respawn()); // Starts the call for coroutine
         }
         
     }
 
+    // Respawn couroutine is used to delay respawn of the player instead of a regular function
     IEnumerator Respawn()
     {
         isPlayerRespawned = true;
@@ -617,6 +646,8 @@ public class Health : MonoBehaviour {
         StartCoroutine("HealthRegeneration", 3);
 
     }
+
+    // Respawns the player copies
     [PunRPC]
     void RespawnOverNetwork(int viewID)
     {
@@ -631,6 +662,7 @@ public class Health : MonoBehaviour {
 
     }
 
+    // Enemies Sink after death
     void SinkEnemy()
     {
         StartCoroutine(Sink());
@@ -643,23 +675,10 @@ public class Health : MonoBehaviour {
 
         StartCoroutine(Sink());
     }
-
+    // Destroy enemy object
     void DestroyEnemy()
     {
         PhotonNetwork.Destroy(gameObject);
 
     }
-
-    /*
-    [PunRPC]
-    void GrantExperience()
-    {
-       if(photonView.isMine)
-        {
-            if(CompareTag("Player"))
-            {
-                Leveling.GrantExperince();
-            }
-        }
-    }*/
 }
